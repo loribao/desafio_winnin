@@ -3,12 +3,11 @@ version: "3"
 services:
     web:
         build: ./web
-        entrypoint: ["npm",start]
+        entrypoint: ["npm","start"]
         ports: 
             - 3000:3000
         environment: 
             PORT: 3000
-
     api:
         build: ./api
         depends_on: 
@@ -25,6 +24,7 @@ services:
             password: Your_password123
     service:
         build: ./service
+        restart: always
         depends_on:
             - db
         command: "npm run typeorm:sync"

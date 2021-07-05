@@ -1,6 +1,4 @@
-FROM node:16-alpine
-
-RUN apk update
+FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-16-buster
 
 WORKDIR /app
 
