@@ -1,0 +1,65 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  """Titulo da postagem"""
+  titulo: String!
+
+  """Data da publicação em segundos"""
+  timestamp: Int!
+
+  """Autor da postagem"""
+  autor: String!
+
+  """Dominio"""
+  dominio: String!
+
+  """Quantidade de up da postagem"""
+  ups: Int!
+
+  """Quantidade de comentarios"""
+  num_comentarios: Int!
+
+  """Data de obtenção da informação"""
+  data_obtido: DateTime!
+
+  """codigo do lote de dados, referente a data de obtenção no site oficial"""
+  uuid_insercao: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Usuario {
+  """Nome do usuario"""
+  nome: String!
+
+  """Posts do usuario"""
+  posts: [Post!]
+
+  """Numero total de ups no total de postagens"""
+  ups: Int!
+
+  """Numero de postagens"""
+  total_coments_posts: Int!
+}
+
+type Query {
+  Posts(
+    """ordenar por 'ups' ou 'num_comentarios'"""
+    ordenar: String = "ups"
+
+    """Data da postage, para pesquisar"""
+    datafim: DateTime!
+
+    """Data da postagem, para pesquisar"""
+    datainicio: DateTime!
+  ): [Post!]!
+  Usuarios(
+    """ordenar por 'ups' ou 'num_comentarios'"""
+    ordenar: String = "ups"
+  ): [Usuario!]!
+}

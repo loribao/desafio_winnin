@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+    web:
+        build: ./web
+        entrypoint: ["npm",start]
+        ports: 
+            - 3000:3000
+        environment: 
+            PORT: 3000
+
+    api:
+        build: ./api
+        depends_on: 
+            - db
+        entrypoint: ["npm","start"]
+        ports: 
+            - 4000:4000
+        environment: 
+            PORT: 4000
+            dbhost: db
+            dbport: 1433
+            database: reddithot
+            userName: sa
+            password: Your_password123
+    service:
+        build: ./service
+        depends_on:
+            - db
+        command: "npm run typeorm:sync"
+        entrypoint: ["npm", "start"]
+        environment: 
+            TYPEORM_CONNECTION: mssql
+            TYPEORM_HOST: db
+            TYPEORM_USERNAME: sa
+            TYPEORM_PASSWORD: Your_password123
+            TYPEORM_DATABASE: reddithot
+            TYPEORM_PORT: 1433
+            TYPEORM_ENTITIES: /app/src/entity/*.ts
+            TYPEORM_SYNCHRONIZE: 1
+            TYPEORM_LOGGING: 1
+    db:
+        build: ./database
+        ports: 
+            - 5000:1433
+        expose: 
+            - 1433
+        restart: always
+        environment:
+            SA_PASSWORD: "Your_password123"
+            ACCEPT_EULA: "Y"
