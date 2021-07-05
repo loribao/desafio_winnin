@@ -43,4 +43,4 @@ essa string '5 4 * * *' diz que será executado todos os dias ás 4 horas e 5 mi
 
 com a string valida altere no docker-compose.yml a variavel 'CRONJOB', lembre de colocar um '_' no lugar dos espaços ex:
 
-5_4_*_*_*
+## '5_4_*_*_*' 
