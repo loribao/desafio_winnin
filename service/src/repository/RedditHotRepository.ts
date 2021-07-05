@@ -26,6 +26,7 @@ export class RedditHotArtificial implements IRedditHotArtificial {
                 cache = await (await this._context.get<IRedditHotArtificialRaw>(url)).data
                 data.push(cache);
                 after = cache.data?.after;
+                console.log(after);
                 cache = null;
             }
             return data;
