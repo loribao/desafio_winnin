@@ -39,6 +39,7 @@ services:
             TYPEORM_ENTITIES: /app/src/entity/*.ts
             TYPEORM_SYNCHRONIZE: 1
             TYPEORM_LOGGING: 1
+            CRONJOB: 1_*_*_*_*_*
     db:
         build: ./database
         ports: 
