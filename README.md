@@ -30,3 +30,15 @@ Posts(datainicio:"2021-06-30",datafim:"2021-07-03",ordenar:"ups"){
     ups
   }
 }
+
+Trabalhando com 'Cron' no service(robô):
+
+na hora de gerar o docker use a variavel CRONJOB com os argurmentos separados por '_'
+
+você pode gerar string 'cron' nesse site: https://crontab.guru/
+
+depois de só adicione um '_' entre cada argumento exemplo:
+
+essa string '5 4 * * *' diz que será executado todos os dias ás 4 horas e 5 minutos.
+
+com a string valida altere no docker-compose.yml a variavel 'CRONJOB', lembre de colocar um '_' no lugar dos espaços, entre no link e verifique a linha 42 https://github.com/loribao/desafio_winnin/blob/main/docker-compose.yml#L42 
