@@ -41,6 +41,4 @@ depois de só adicione um '_' entre cada argumento exemplo:
 
 essa string '5 4 * * *' diz que será executado todos os dias ás 4 horas e 5 minutos.
 
-com a string valida altere no docker-compose.yml a variavel 'CRONJOB', lembre de colocar um '_' no lugar dos espaços ex:
-
-## '5_4_*_*_*' 
+com a string valida altere no docker-compose.yml a variavel 'CRONJOB', lembre de colocar um '_' no lugar dos espaços, entre no link e verifique a linha 42 https://github.com/loribao/desafio_winnin/blob/main/docker-compose.yml#L42 
