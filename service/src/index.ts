@@ -25,7 +25,7 @@ const boot = async () => {
     }
 }
 const job = new CronJob(
-process.env.CRONJOB? process.env.CRONJOB?.split('_').reduce((p,v)=>p+" "+v):'0 0 * * * *', async ()=> await boot() );
+process.env.CRONJOB? process.env.CRONJOB?.split('_').reduce((p,v)=>p+" "+v):'0 0 * * *', async ()=> await boot() );
 
 const main = async ()=>{
     boot().then(async()=>{
