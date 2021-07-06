@@ -1,5 +1,5 @@
 ﻿# desafio_winnin
-veeja a mini explicação:
+veja a mini explicação:
 
 
 https://youtu.be/MOVTDwJrzd0
